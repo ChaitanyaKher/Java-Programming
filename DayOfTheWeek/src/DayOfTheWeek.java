@@ -61,77 +61,44 @@ public class DayOfTheWeek {
                 break;
         }
     }
-    public static class NumberOfDaysInAMonth{
-    public static boolean isLeapYear(int year) {
-        if (year >= 1 && year <= 9999) {
-            if (year % 4 != 0) {
-                return false;
-            } else if (year % 400 == 0) {
-                return true;
-            } else if (year % 100 == 0) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            return false;
-        }
-    }
 
-    public static int getDaysInMonth(int month, int year) {
-        if ((month >= 1 || month <= 12) && (year > 1 || year < 9999)) {
-            boolean LeapYearCheck = NumberOfDaysInAMonth.isLeapYear(year);
-            int TotalDays;
-            if (LeapYearCheck) {
-                switch (month) {
-                    case 1:
-                    case 3:
-                    case 5:
-                    case 7:
-                    case 9:
-                    case 11:
-                        TotalDays = 31;
-                        return TotalDays;
-                    case 2:
-                        TotalDays = 29;
-                        return TotalDays;
-                    case 4:
-                    case 6:
-                    case 8:
-                    case 10:
-                    case 12:
-                        TotalDays = 30;
-                        return TotalDays;
-                    default:
-                        return -1;
+    public static class NumberOfDaysInMonth {
+        public static boolean isLeapYear(int year) {
+            if (year >= 1 && year <= 9999) {
+                if (year % 4 != 0) {
+                    return false;
+                } else if (year % 400 == 0) {
+                    return true;
+                } else if (year % 100 == 0) {
+                    return false;
+                } else {
+                    return true;
                 }
             } else {
-                switch (month) {
-                    case 1:
-                    case 3:
-                    case 5:
-                    case 7:
-                    case 9:
-                    case 11:
-                        TotalDays = 31;
+                return false;
+            }
+        }
+
+        public static int getDaysInMonth(int month, int year) {
+            int TotalDays = 0;
+            if ((month>=1&&month<=12)&&(year>=1&&year<=9999)){
+                switch (month){
+                    case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                        TotalDays =31;
                         return TotalDays;
                     case 2:
-                        TotalDays = 28;
-                        return TotalDays;
-                    case 4:
-                    case 6:
-                    case 8:
-                    case 10:
+                        return TotalDays = isLeapYear(year)?29:28;
+                    case 4: case 6: case 9: case 11:
                         TotalDays = 30;
                         return TotalDays;
                     default:
                         return -1;
                 }
-            }
-        } else return -1;
-    }
+            } else return -1;
+        }
 }
+
     public static void main(String[] args) {
-        System.out.println(NumberOfDaysInAMonth.getDaysInMonth(1,2020));
+        System.out.println(NumberOfDaysInMonth.getDaysInMonth(10,2020));
     }
 }
