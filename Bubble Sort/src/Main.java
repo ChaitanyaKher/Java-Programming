@@ -15,7 +15,7 @@ public class Main {
         }
         System.out.println("\n");
         System.out.println("My Bubble Sort");
-        int[] newIntArray = {351,345,919,409,346,800,409,384,295,240,550,5,504,882,108,92,407,219,54,619,409,122,198,750,852,203,472,406,474,101};
+        int[] newIntArray = {20,35,-15,7,55,1,-22};
         BubbleSort bubble = new BubbleSort();
         System.out.println("Sort in ascending order");
         bubble.BubbleSort(newIntArray, true);

@@ -1,4 +1,4 @@
-public class Main{
+    public class Main{
     public static void main(String[] args) {
         int[] intArray = {20, 35, -15, 7, 55, 1, -22};
 
@@ -15,9 +15,14 @@ public class Main{
         }
 
         //print the Array
-        for (int i : intArray) {
-            System.out.println(i);
-        }
+//        for (int i : intArray) {
+//            System.out.print(i+ " ");
+//        }
+//        System.out.println();
+        //My own sort
+        int[] newIntArray = {20,35,15,7,55,1,22};
+        SelectionSort ch = new SelectionSort(newIntArray);
+        ch.SortMe();
     }
 
     public static void swap(int[] array, int i, int j){
