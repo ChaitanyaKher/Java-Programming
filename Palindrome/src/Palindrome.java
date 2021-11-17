@@ -13,7 +13,7 @@ public class Palindrome{
             reverse = reverse *10+number%10;
             number/=10;
         }
-        System.out.println(reverse);
+        System.out.println(reverse+" ");
         if (reverse == originalNumber) return true;
         else return false;
     }
