@@ -5,8 +5,7 @@ public class Palindrome{
             isPalindrome(i);
     }
 
-    public static boolean isPalindrome(int number){
-        int originalNumber = number;
+    public static void isPalindrome(int number){
         int reverse = 0;
         // extracting last digit
         while (number!=0) {
@@ -14,7 +13,5 @@ public class Palindrome{
             number/=10;
         }
         System.out.println(reverse+" ");
-        if (reverse == originalNumber) return true;
-        else return false;
     }
 }
